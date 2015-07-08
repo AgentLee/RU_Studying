@@ -146,7 +146,7 @@ def main():
 		dir_entry_path = os.path.join(path, dir_entry)
 
 		# need to go through 332, bug with digital logic design
-		if dir_entry_path == "data/data_332.json":
+		if dir_entry_path == "data/data_332.json" or dir_entry_path == "data/965.json":
 			continue
 		if os.path.isfile(dir_entry_path):
 			with open(dir_entry_path) as outfile:
@@ -189,6 +189,7 @@ def main():
 										print "Class starts at ", start, " and ends at ", end, pm
 										print(bcolors.OKBLUE + "ROOM OPEN" + bcolors.ENDC)
 										print campus, building, room
+										print(bcolors.WARNING + dir_entry_path + bcolors.ENDC)
 										print(bcolors.HEADER + "*************************************" + bcolors.ENDC)
 									#print day, start, end, pm	
 									#print currTime		
@@ -199,5 +200,4 @@ def main():
 
 				i += 1
 
-if __name__ == "__main__":
-    main()
+main()

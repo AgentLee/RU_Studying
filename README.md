@@ -8,10 +8,14 @@ Plan is to get this to work as a webapp eventually with django.
 Files
 =======================================================================
 
+	* * * * * * * * * * * * * * * * * * * * * * * * * * 
+	* parse2.py		--> 	bug found in 332, 960+    *
+	* parsetester.py 	-->		use to debug parse2   *
+	* * * * * * * * * * * * * * * * * * * * * * * * * * 
+
 	data.json		-->		all classes/departments
 	guitest.py		--> 	exactly what it sounds like
 	parse.py		--> 	parses through all departments through url
-	parse2.py		--> 	THIS WORKS, JUST NEEDS DATA STRUCTURE AND CLEANUP
 	parsetest.py	-->		JSON parse test
 	rustudy.py 		-->		duplicate of selective.py
 	selective.py	--> 	bug with 332 through url
