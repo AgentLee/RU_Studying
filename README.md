@@ -5,7 +5,6 @@ So basically using Rutgers API to get available classrooms for studying.
 
 Plan is to get this to work as a webapp eventually with django.
 
-=======================================================================
 Files
 =======================================================================
 
@@ -21,7 +20,6 @@ Files
 	test.py			-->		loop through directory test
 	timetest.py		--> 	get time and stuff 
 
-=======================================================================
 Directories
 =======================================================================
 	data  			--> 	all json files for all departments
