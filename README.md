@@ -8,10 +8,10 @@ Plan is to get this to work as a webapp eventually with django.
 Files
 =======================================================================
 
-	* * * * * * * * * * * * * * * * * * * * * * * * * * 
-	* parse2.py		--> 	bug found in 332, 960+    *
-	* parsetester.py 	-->		use to debug parse2   *
-	* * * * * * * * * * * * * * * * * * * * * * * * * * 
+	* * * * * * * * * * * * * * * * * * * * * * * * * * * *
+	* parse2.py			--> 	bug found in 332, 960+    *
+	* parsetester.py 	-->		use to debug parse2  	  *
+	* * * * * * * * * * * * * * * * * * * * * * * * * * * *
 
 	data.json		-->		all classes/departments
 	guitest.py		--> 	exactly what it sounds like
