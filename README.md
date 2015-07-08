@@ -9,7 +9,6 @@ Files
 =======================================================================
 
 	data.json		-->		all classes/departments
-	data.txt		-->		
 	guitest.py		--> 	exactly what it sounds like
 	parse.py		--> 	parses through all departments through url
 	parse2.py		--> 	THIS WORKS, JUST NEEDS DATA STRUCTURE AND CLEANUP
