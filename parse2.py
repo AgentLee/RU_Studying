@@ -136,9 +136,98 @@ def selectCampus():
 	else:
 		selectCampus()
 
+def addBldg(building, bldgs, campus):
+	if building not in bldgs:
+		if campus == "LIVINGSTON":
+			liviFile = open("livi.txt", "a")
+			if building is not None:
+				liviFile.write(building+"\n")
+			liviFile.close()
+			bldgs.append(building)
+		elif campus == "BUSCH":
+			buschFile = open("busch.txt", "a")
+			if building is not None:
+				buschFile.write(building+"\n")
+			buschFile.close()
+			bldgs.append(building)
+		elif campus == "DOUGLAS/COOK":
+			cdFile = open("cdFile.txt", "a")
+			if building is not None:
+				cdFile.write(building+"\n")
+			cdFile.close()
+			bldgs.append(building)
+		elif campus == "COLLEGE AVENUE":
+			caFile = open("caFile.txt", "a")
+			if building is not None:
+				caFile.write(building+"\n")
+			caFile.close()
+			bldgs.append(building)
+
+def selectBldg(campusChoice):
+	bldgs = []
+	bldg = ""
+	i = 1
+
+	if campusChoice == "LIVINGSTON":
+		fn = open("livi.txt", "r")
+		
+		for line in fn:
+			bldgs.append(line)
+
+		for x in bldgs:
+			print i, x
+			i += 1	
+
+		bldgChoice = input()
+		bldg = bldgs[bldgChoice]	
+	elif campusChoice == "BUSCH":
+		fn = open("busch.txt", "r")
+		
+		for line in fn:
+			bldgs.append(line)
+
+		for x in bldgs:
+			print i, x
+			i += 1	
+
+		bldgChoice = input()
+		bldg = bldgs[bldgChoice]	
+	elif campusChoice == "DOUGLAS/COOK":
+		fn = open("cdFile.txt", "r")
+		
+		for line in fn:
+			bldgs.append(line)
+
+		for x in bldgs:
+			print i, x
+			i += 1	
+
+		bldgChoice = input()
+		bldg = bldgs[bldgChoice]	
+	elif campusChoice == "COLLEGE AVENUE":
+		fn = open("caFile.txt", "r")
+		
+		for line in fn:
+			bldgs.append(line)
+
+		for x in bldgs:
+			print i, x
+			i += 1	
+
+		bldgChoice = input()
+		bldg = bldgs[bldgChoice]	
+
+	print bldg
+
+	#elif campusChoice == "LIVINGSTON":
+	#elif campusChoice == "LIVINGSTON":
+	#elif campusChoice == "LIVINGSTON":
+
 def main():
 	print(bcolors.FAIL+ "If the room in question is not displayed, it may still be available"+bcolors.ENDC)
 	campusChoice = selectCampus()
+	bldgChoice = selectBldg(campusChoice)
+	bldgs = list()
 	currDay = time.strftime("%a")
 	path = 'data/'
 
@@ -216,12 +305,20 @@ def main():
 									currTime = str(time.strftime("%I:%M"))
 
 									if checkOpen(start, end, pm) is True:
-										print(bcolors.WARNING + currTime + bcolors.ENDC)
-										print "Next class starts at ", start, "and ends at", end, pm
-										print(bcolors.OKBLUE + "ROOM OPEN" + bcolors.ENDC)
-										print campus, building, room
-										print(bcolors.WARNING + dir_entry_path + bcolors.ENDC)
-										print(bcolors.HEADER + "*************************************" + bcolors.ENDC)
+										
+										# add to building file
+										#addBldg(building, bldgs, campus)
+										
+										if building in bldgChoice:
+											print "Next class starts at ", start, "and ends at", end, pm
+											print(bcolors.OKBLUE + "ROOM OPEN" + bcolors.ENDC)
+											print building, room
+											#print(bcolors.WARNING + currTime + bcolors.ENDC)
+											#print "Next class starts at ", start, "and ends at", end, pm
+											#print(bcolors.OKBLUE + "ROOM OPEN" + bcolors.ENDC)
+											#print campus, building, room
+											#print(bcolors.WARNING + dir_entry_path + bcolors.ENDC)
+											#print(bcolors.HEADER + "*************************************" + bcolors.ENDC)
 									#print day, start, end, pm	
 									#print currTime		
 
