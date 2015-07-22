@@ -147,7 +147,18 @@ def main():
 
 		# need to go through 332, bug with digital logic design
 		if dir_entry_path == "data/data_332.json":
+			"""
+			path = "data/data_332.json"
+
+			with open(path) as json_Data:
+				data = json.load(json_Data)
+
+			numClasses = len(data)
+
+			numSections = 0
+
 			i = 0
+			
 			while i in range(0, numClasses):
 				course = data[i]['title']
 				
@@ -155,9 +166,12 @@ def main():
 					numSections += 1	
 
 				print course, numSections
+				print "\n"
 
 				i += 1
-			outfile.close()
+			"""
+			continue
+
 		else:
 			if dir_entry_path == "data/data_988.json":
 				path = "data/data_988.json"
@@ -216,7 +230,8 @@ def main():
 					j += 1
 
 				i += 1
-				outfile.close()
+
+		outfile.close()
 
 if __name__ == "__main__":
     main()

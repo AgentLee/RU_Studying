@@ -3,7 +3,7 @@ import os
 import time
 from pprint import pprint
 
-path = "data/data_988.json"
+path = "data/data_332.json"
 
 with open(path) as json_Data:
 	data = json.load(json_Data)
@@ -11,7 +11,7 @@ with open(path) as json_Data:
 numClasses = len(data)
 
 numSections = 0
-
+"""
 i = 0
 while i in range(0, numClasses):
 	course = data[i]['title']
@@ -43,8 +43,8 @@ while i in range(0, numClasses):
 	i += 1
 
 
-""" 
-	THIS FIXES 332...maybe
+
+	THIS FIXES 332...maybe"""
 i = 0
 while i in range(0, numClasses):
 	course = data[i]['title']
@@ -56,7 +56,7 @@ while i in range(0, numClasses):
 
 	i += 1
 
-
+"""
 	FIXES 960+
 i = 0
 while i in range(0, numClasses):
