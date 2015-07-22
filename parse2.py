@@ -168,61 +168,97 @@ def selectBldg(campusChoice):
 	bldg = ""
 	i = 1
 
+	if campusChoice == "BUSCH":
+		with open("busch.txt") as fn:
+			while True:
+				c = fn.read(1)
+
+				if c == ' ':
+					bldgs.append(bldg)
+					print i, ".", bldg
+					bldg = ""
+					i += 1
+				else:
+					bldg += c
+
+				if not c:
+					bldgs.append(bldg)
+					print i, ".", bldg
+					bldg = ""
+					i += 1
+					break
+
+		bldgChoice = input()
+		return bldgs[bldgChoice-1]	
+
 	if campusChoice == "LIVINGSTON":
-		fn = open("livi.txt", "r")
-		
-		for line in fn:
-			bldgs.append(line)
+		with open("livi.txt") as fn:
+			while True:
+				c = fn.read(1)
 
-		for x in bldgs:
-			print i, x
-			i += 1	
+				if c == ' ':
+					bldgs.append(bldg)
+					print i, ".", bldg
+					bldg = ""
+					i += 1
+				else:
+					bldg += c
 
-		bldgChoice = input()
-		bldg = bldgs[bldgChoice]	
-	elif campusChoice == "BUSCH":
-		fn = open("busch.txt", "r")
-		
-		for line in fn:
-			bldgs.append(line)
-
-		for x in bldgs:
-			print i, x
-			i += 1	
+				if not c:
+					bldgs.append(bldg)
+					print i, ".", bldg
+					bldg = ""
+					i += 1
+					break
 
 		bldgChoice = input()
-		bldg = bldgs[bldgChoice]	
-	elif campusChoice == "DOUGLAS/COOK":
-		fn = open("cdFile.txt", "r")
-		
-		for line in fn:
-			bldgs.append(line)
+		return bldgs[bldgChoice-1]
 
-		for x in bldgs:
-			print i, x
-			i += 1	
+	if campusChoice == "COLLEGE AVENUE":
+		with open("caFile.txt") as fn:
+			while True:
+				c = fn.read(1)
+
+				if c == ' ':
+					bldgs.append(bldg)
+					print i, ".", bldg
+					bldg = ""
+					i += 1
+				else:
+					bldg += c
+
+				if not c:
+					bldgs.append(bldg)
+					print i, ".", bldg
+					bldg = ""
+					i += 1
+					break
 
 		bldgChoice = input()
-		bldg = bldgs[bldgChoice]	
-	elif campusChoice == "COLLEGE AVENUE":
-		fn = open("caFile.txt", "r")
-		
-		for line in fn:
-			bldgs.append(line)
+		return bldgs[bldgChoice-1]
 
-		for x in bldgs:
-			print i, x
-			i += 1	
+	if campusChoice == "DOUGLAS/COOK":
+		with open("cdFile.txt") as fn:
+			while True:
+				c = fn.read(1)
+
+				if c == ' ':
+					bldgs.append(bldg)
+					print i, ".", bldg
+					bldg = ""
+					i += 1
+				else:
+					bldg += c
+
+				if not c:
+					bldgs.append(bldg)
+					print i, ".", bldg
+					bldg = ""
+					i += 1
+					break
 
 		bldgChoice = input()
-		bldg = bldgs[bldgChoice]	
-
-	print bldg
-
-	#elif campusChoice == "LIVINGSTON":
-	#elif campusChoice == "LIVINGSTON":
-	#elif campusChoice == "LIVINGSTON":
-
+		return bldgs[bldgChoice-1]
 def main():
 	print(bcolors.FAIL+ "If the room in question is not displayed, it may still be available"+bcolors.ENDC)
 	campusChoice = selectCampus()
@@ -309,7 +345,7 @@ def main():
 										# add to building file
 										#addBldg(building, bldgs, campus)
 										
-										if building in bldgChoice:
+										if building == bldgChoice:
 											print "Next class starts at ", start, "and ends at", end, pm
 											print(bcolors.OKBLUE + "ROOM OPEN" + bcolors.ENDC)
 											print building, room
