@@ -259,6 +259,7 @@ def selectBldg(campusChoice):
 
 		bldgChoice = input()
 		return bldgs[bldgChoice-1]
+
 def main():
 	print(bcolors.FAIL+ "If the room in question is not displayed, it may still be available"+bcolors.ENDC)
 	campusChoice = selectCampus()
@@ -346,7 +347,7 @@ def main():
 										#addBldg(building, bldgs, campus)
 										
 										if building == bldgChoice:
-											print "Next class starts at ", start, "and ends at", end, pm
+											print(bcolors.WARNING + "Next class starts at " + start + " and ends at "+ end + bcolors.ENDC)
 											print(bcolors.OKBLUE + "ROOM OPEN" + bcolors.ENDC)
 											print building, room
 											#print(bcolors.WARNING + currTime + bcolors.ENDC)
@@ -354,7 +355,7 @@ def main():
 											#print(bcolors.OKBLUE + "ROOM OPEN" + bcolors.ENDC)
 											#print campus, building, room
 											#print(bcolors.WARNING + dir_entry_path + bcolors.ENDC)
-											#print(bcolors.HEADER + "*************************************" + bcolors.ENDC)
+											print(bcolors.HEADER + "*************************************" + bcolors.ENDC)
 									#print day, start, end, pm	
 									#print currTime		
 
