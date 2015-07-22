@@ -146,11 +146,28 @@ def main():
 		dir_entry_path = os.path.join(path, dir_entry)
 
 		# need to go through 332, bug with digital logic design
-		if dir_entry_path == "data/data_332.json" or dir_entry_path == "data/965.json":
-			continue
-		if os.path.isfile(dir_entry_path):
-			with open(dir_entry_path) as outfile:
-				data = json.load(outfile)
+		if dir_entry_path == "data/data_332.json":
+			i = 0
+			while i in range(0, numClasses):
+				course = data[i]['title']
+				
+				if data[i]['sections'] != 0:
+					numSections += 1	
+
+				print course, numSections
+
+				i += 1
+			outfile.close()
+		else:
+			if dir_entry_path == "data/data_988.json":
+				path = "data/data_988.json"
+
+				with open(path) as json_Data:
+					data = json.load(json_Data)
+
+			elif os.path.isfile(dir_entry_path):
+				with open(dir_entry_path) as outfile:
+					data = json.load(outfile)
 
 			numClasses = len(data)
 
@@ -186,7 +203,7 @@ def main():
 
 									if checkOpen(start, end, pm) is True:
 										print(bcolors.WARNING + currTime + bcolors.ENDC)
-										print "Class starts at ", start, " and ends at ", end, pm
+										print "Next class starts at ", start, "and ends at", end, pm
 										print(bcolors.OKBLUE + "ROOM OPEN" + bcolors.ENDC)
 										print campus, building, room
 										print(bcolors.WARNING + dir_entry_path + bcolors.ENDC)
@@ -199,5 +216,7 @@ def main():
 					j += 1
 
 				i += 1
+				outfile.close()
 
-main()
+if __name__ == "__main__":
+    main()
