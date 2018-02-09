@@ -1,4 +1,7 @@
-Readme
+# RU Studying
+
+## MOVED TO ![https://github.com/AgentLee/RU-Studying-3.0](NEW REPO)
+
 =======================================================================
 
 So basically using Rutgers API to get available classrooms for studying.
