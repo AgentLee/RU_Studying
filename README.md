@@ -1,6 +1,6 @@
 # RU Studying
 
-## MOVED TO ![https://github.com/AgentLee/RU-Studying-3.0](NEW REPO)
+## MOVED TO [NEW REPO](https://github.com/AgentLee/RU-Studying-3.0)!
 
 =======================================================================
 
